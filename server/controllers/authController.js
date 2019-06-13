@@ -55,8 +55,8 @@ module.exports ={
     
     logOut: (req,res) => {
         //Should return an empty object
-        req.session.destroy(
+        req.session.destroy();
             res.status(200).send(req.session)
-        )
+        
     }
 }

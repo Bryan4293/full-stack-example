@@ -1,12 +1,14 @@
 import React, {Component} from "react";
 import axios from "axios";
+import {Redirect} from 'react-router-dom'
 
 class Register extends Component {
     constructor(){
         super()
         this.state ={
             username: "",
-            password: ''
+            password: '',
+            redirect: false
         }
         this.handleUsername= this.handleUsername.bind(this)
         this.handlePassword= this.handlePassword.bind(this)
@@ -37,6 +39,10 @@ class Register extends Component {
     }
 
     render(){
+        if(this.state.redirect){
+            alert('Go Login NOW!!!')
+            return <Redirect to="/login"/>
+        }
         return(
             <div>
                 <h3>Register a New Account</h3>
